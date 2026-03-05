@@ -4,9 +4,9 @@
 [![License](https://img.shields.io/github/license/cyclone-github/guarda_pwn.svg)](LICENSE)
 [![GitHub release](https://img.shields.io/github/release/cyclone-github/guarda_pwn.svg)](https://github.com/cyclone-github/guarda_pwn/releases)
 
-### Install guarda_decryptor
+### Install guarda_pwn
 ```
-go install github.com/cyclone-github/guarda_pwn/guarda_decryptor@main
+go install github.com/cyclone-github/guarda_pwn@main
 ```
 
 ---
@@ -21,10 +21,10 @@ Guarda backups are encrypted using **CryptoJS AES-256-CBC with OpenSSL**.
 
 ---
 
-# Decryptor usage example
+# Usage example
 
 ```
-./guarda_decryptor.bin -h guarda-wallet.txt -w wordlist.txt
+./guarda_pwn.bin -h guarda-wallet.txt -w wordlist.txt
 
  ------------------------------------ 
 | Cyclone's Guarda Wallet Decryptor  |
@@ -42,7 +42,7 @@ Decrypted:      {...}
 
 ---
 
-# Decryptor supported options
+# Supported options
 
 ```
 -w {wordlist}
@@ -56,9 +56,9 @@ Decrypted:      {...}
 Example:
 
 ```
-./guarda_decryptor.bin -h guarda-wallet.txt -w wordlist.txt
+./guarda_pwn.bin -h guarda-wallet.txt -w wordlist.txt
 
-./guarda_decryptor.bin -h guarda-wallet.txt -w wordlist.txt -t 16 -s 10
+./guarda_pwn.bin -h guarda-wallet.txt -w wordlist.txt -t 16 -s 10
 ```
 
 ---
@@ -97,7 +97,7 @@ This assumes **Go and Git are installed**.
 ```
 git clone https://github.com/cyclone-github/guarda_pwn.git
 cd guarda_pwn
-go mod init guarda_decryptor
+go mod init guarda_pwn
 go mod tidy
 go build -ldflags="-s -w" .
 go install -ldflags="-s -w" .
