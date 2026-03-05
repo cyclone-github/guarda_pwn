@@ -33,6 +33,8 @@ GNU General Public License v2.0
 version history
 v0.1.0; 2026-02-16
 	initial version
+v0.2.0; 2026-03-05
+	github release
 */
 
 const (
@@ -53,19 +55,19 @@ type GuardaHash struct {
 }
 
 func versionFunc() {
-	fmt.Fprintln(os.Stderr, "Cyclone's Guarda Wallet Decryptor v0.1.0-2026-02-16\nhttps://github.com/cyclone-github/\n")
+	fmt.Fprintln(os.Stderr, "Cyclone's Guarda Wallet Decryptor v0.2.0; 2026-03-05\nhttps://github.com/cyclone-github/guarda_pwn\n")
 }
 
 func helpFunc() {
 	versionFunc()
-	str := `Guarda Wallet backup decryptor / cracker
+	str := `Guarda Wallet backup decryptor
 
 The hash file should contain one base64-encoded Guarda wallet backup per line.
-Guarda backups use CryptoJS AES encryption (OpenSSL "Salted__" format).
+Guarda backups use CryptoJS AES encryption.
 
 Example Usage:
-./guarda_decryptor.bin -h guarda-wallet.txt -w wordlist.txt
-./guarda_decryptor.bin -h guarda-wallet.txt -w wordlist.txt -t 16 -s 10`
+./guarda_pwn.bin -h guarda-wallet.txt -w wordlist.txt
+./guarda_pwn.bin -h guarda-wallet.txt -w wordlist.txt -t 16 -s 10`
 	fmt.Fprintln(os.Stderr, str)
 }
 
